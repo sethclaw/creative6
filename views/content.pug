@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  if (!user)
+    p You must login to see content!
+    a(href="/login") Login
+    br
+  if (user)
+    p You are currently logged in as #{user.username}
+    p here is some content.
+    p here is your loggin info!. = #{user}
+    p here is some content for user: #{user.username}.
+    a(href="/logout") Logout
